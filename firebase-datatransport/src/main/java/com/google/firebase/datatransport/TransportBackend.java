@@ -1,4 +1,4 @@
-// Copyright 2018 Google LLC
+// Copyright 2023 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,7 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-ext {
-    targetSdkVersion = 33
-    minSdkVersion = 14
-}
+package com.google.firebase.datatransport;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Target;
+import javax.inject.Qualifier;
+
+@Qualifier
+@Target({ElementType.PARAMETER, ElementType.METHOD, ElementType.FIELD})
+public @interface TransportBackend {}
